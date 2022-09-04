@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="chatbox">
+            <div class="chatbox__support" id="chatSupport">
+                <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                        <img src="./images/logo2.png" alt="image" height="40px" width="auto">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">M.H. Saboo Siddik COE</h4>
+                        <p class="chatbox__description--header">How can I help you?</p>
+                    </div>
+                    <div>
+                        <button id="closeChatBtn" class="chat__close" onclick="closeChat()">
+                            <img src="./images/close.png" alt="close" height="20px">
+                        </button>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div>
+                        <p class="messages__item messages__item--visitor">faisal</p>
+                        <p class="messages__item messages__item--operator">faisal</p>
+                        <p class="messages__item messages__item--visitor">faisal</p>
+                        <p class="messages__item messages__item--operator">faisal</p>
+                        <p class="messages__item messages__item--visitor">faisal</p>
+                        <p class="messages__item messages__item--operator">faisal</p>
+                        <p class="messages__item messages__item--visitor">faisal</p>
+                        <p class="messages__item messages__item--operator">faisal</p>
+                    </div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Place your query...">
+                    <button class="chatbox__send--footer send__button">
+                        <img src="./images/send.png" alt="send" height="20px" width="auto">
+                    </button>
+                </div>
+            </div>
+            <div class="chatbox__button">
+                <button><img id="chatBtn" onclick="openChat()" src="images/chatbot (2).png" /></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        document.querySelector('.chatbox__support').classList.add('chatbox--active');
+    </script> -->
+
+    <script>
+        let cl = document.getElementById("chatBtn");
+        var x = window.matchMedia("(max-width: 600px)")
+        function openChat() {
+            let chatSupport = document.getElementById('chatSupport');
+            if (chatSupport.style.display === 'none') {
+                chatSupport.style.display = 'flex';
+                if (x.matches) { // If media query matches
+                    document.querySelector('.chatbox__button').style.display = "none";
+                }
+                // chatSupport.style.classList.add('chatbox--active');
+            } else {
+                chatSupport.style.display = 'none';
+            }
+            // document.querySelector('.chatbox_support').style.display = "none";
+        }
+
+        let closeChatBtn = document.getElementById('closeChatBtn');
+        let closeChat = () => {
+            let chatSupport = document.getElementById('chatSupport');
+            chatSupport.style.display = 'none';
+            document.querySelector('.chatbox__button').style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
