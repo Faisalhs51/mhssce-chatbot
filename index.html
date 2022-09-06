@@ -47,14 +47,10 @@
                 </div>
             </div>
             <div class="chatbox__button">
-                <button><img id="chatBtn" onclick="openChat()" src="images/chatbot (2).png" /></button>
+                <button><img id="chatBtn" onclick="openChat()" src="images/chatbot.png" /></button>
             </div>
         </div>
     </div>
-
-    <!-- <script>
-        document.querySelector('.chatbox__support').classList.add('chatbox--active');
-    </script> -->
 
     <script>
         let cl = document.getElementById("chatBtn");
@@ -66,11 +62,9 @@
                 if (x.matches) { // If media query matches
                     document.querySelector('.chatbox__button').style.display = "none";
                 }
-                // chatSupport.style.classList.add('chatbox--active');
             } else {
                 chatSupport.style.display = 'none';
             }
-            // document.querySelector('.chatbox_support').style.display = "none";
         }
 
         let closeChatBtn = document.getElementById('closeChatBtn');
